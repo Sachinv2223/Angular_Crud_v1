@@ -18,7 +18,8 @@ export class TestInterceptorInterceptor implements HttpInterceptor {
     let commonUrl = 'http://localhost:3000/'
     let newRequest = request.clone({
       url:(commonUrl+request.url),
-      setHeaders:{'Auth-header':'hgfewykuhfweiuy'},
+      //for authentication, we use tokens
+      // setHeaders:{'Auth-header':'hgfewykuhfweiuy'},
     })
     return next.handle(newRequest);
   }
